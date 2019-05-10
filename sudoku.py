@@ -188,7 +188,7 @@ while num_tries<max_tries and solved==False and retry:
     #Very sloppy way to do this, but if we try enough different objective functions
     #we should eventually hit all the vertices of the solution polytope
     #and find an integer solution if there is one.
-    c = [random.random()-0.5 for x in range(729)]
+    c = [random.gauss(0,2) for x in range(729)]
     res = solvers.lp(matrix(final_constraint_vector),matrix(final_constraint_matrix),
                      matrix(c))
 
